@@ -3,19 +3,19 @@ CC = g++
 CFLAGS  = -g -Wall -Wextra -Werror -std=c++98
 
 TARGET = main
-SOURCES = main.cpp Fixed.cpp
-OBJ = main.o Fixed.o
+SOURCES = main.cpp ClapTrap.cpp
+OBJ = main.o ClapTrap.o
 
 all: exec
 
 exec: $(OBJ)
 	$(CC) $(CFLAGS) -o main $(OBJ)
 
-$(TARGET).o: $(TARGET).cpp Fixed.hpp
+$(TARGET).o: $(TARGET).cpp ClapTrap.hpp
 	$(CC) $(CFLAGS) -c $(TARGET).cpp
 
-Fixed.o: Fixed.cpp Fixed.hpp
-	$(CC) $(CFLAGS) -c Fixed.cpp
+ClapTrap.o: ClapTrap.cpp ClapTrap.hpp
+	$(CC) $(CFLAGS) -c ClapTrap.cpp
 
 clean:
 	$(RM) main $(OBJ)

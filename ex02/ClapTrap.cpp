@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 23:15:30 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/14 16:16:08 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/14 17:24:27 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ ClapTrap::ClapTrap( std::string _name ) : name(_name)
 ClapTrap::~ClapTrap( void )
 {
 	std::cout << "ClapTrap destructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap( void )
+{
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& obj)

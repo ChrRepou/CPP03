@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 16:30:17 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/14 17:06:33 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/14 17:26:31 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,23 @@ FragTrap::FragTrap( std::string _name ) : ClapTrap(_name)
 FragTrap::~FragTrap( void )
 {
 	std::cout << "FragTrap destructor called" << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap& obj)
+{
+	std::cout << "FragTrap copy constructor called" << std::endl;
+	*this = obj;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& obj)
+{
+	if (this != &obj) { // Check self-assignment
+		name = obj.name;
+		attackDamage = obj.attackDamage;
+		energyPoints = obj.energyPoints;
+		hitPoints = obj.hitPoints;
+	}
+	return *this; // Return the modified object
 }
 
 void FragTrap::attack(const std::string& target)

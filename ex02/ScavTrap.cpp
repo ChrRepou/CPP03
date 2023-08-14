@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:07:26 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/14 16:19:42 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/14 17:27:22 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,23 @@ ScavTrap::ScavTrap( std::string _name ) : ClapTrap(_name)
 ScavTrap::~ScavTrap( void )
 {
 	std::cout << "ScavTrap destructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& obj)
+{
+	std::cout << "ScavTrap copy constructor called" << std::endl;
+	*this = obj;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& obj)
+{
+	if (this != &obj) { // Check self-assignment
+		name = obj.name;
+		attackDamage = obj.attackDamage;
+		energyPoints = obj.energyPoints;
+		hitPoints = obj.hitPoints;
+	}
+	return *this; // Return the modified object
 }
 
 void ScavTrap::attack(const std::string& target)

@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 16:30:22 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/14 17:03:27 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/14 17:25:45 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class FragTrap : public ClapTrap {
 	public:
 		FragTrap( std::string _name ); //constructor
 		~FragTrap( void ); //destructor
+		FragTrap(const FragTrap& obj); //copy constructor
+		FragTrap& operator=(const FragTrap& obj); //copy assignment operator overload
 
 		void attack(const std::string& target);
 		void highFivesGuys(void);

@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 23:15:19 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/14 16:11:13 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/14 17:29:08 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ClapTrap {
 		int	hitPoints;
 		int	energyPoints;
 		int	attackDamage;
+		ClapTrap(); //default constructor
 	
 	public:
 		ClapTrap( std::string _name ); //constructor
